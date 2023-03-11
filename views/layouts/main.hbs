@@ -1,0 +1,51 @@
+{{> head }}
+
+<body>
+    {{> navbar}}
+
+    {{{ body }}}
+
+    {{!-- {{> home }} --}}
+
+    {{> footer}}
+   <script>
+  $(document).ready(function () {
+   $(".getnew").click(function () {
+    var imgparam =  $(this).attr('value');
+    var keynum = $(this).parent().attr('value');
+   
+      $.post("/bookget",
+         {
+            value: imgparam,
+            value2: keynum
+         },
+         function (data, status) {
+          var newone = "/public/book/" + data.data + "";
+            $(".b1").attr("src", newone);
+
+            $(".getnew").eq(data.data2).css({"color": "red", "border": "2px solid lightblue"});
+
+
+         });
+   });
+    $(".img-data-new").click(function () {
+    var imgparams =  $(this).attr('id');
+    var ext = $(this);
+   
+    $.post("/bookmobile",
+         {
+            value: imgparams
+           
+         },
+         function (data, status) {
+          var newone = "/public/book/book-" + data.data + ".webp";
+            
+ 			var content = $("<div style='width:100%; height: 800px; background-color: green'><img src='"+newone+"' style='width:100%; height:100%;'></div>");
+ 			ext.after(content);
+         });
+});
+});
+
+</script>
+  </body>
+</html>

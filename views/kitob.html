@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<section class="container">
+  <div class="row">
+    <div class="col-md-2">
+       {{#each bookdata}}
+        <div class="image-out" value="{{@key}}">
+          <img src="/public/book/{{this}}" value="{{this}}" class="getnew">
+        </div>
+        <p style="text-align: center;">
+        {{@key}}
+        </p>
+         {{/each}}
+    </div>
+    <div class="col-md-10">
+      <img class="b1" src="/public/book/book-001.webp">
+    </div>
+  </div>
+</section>
+<script>
+  $(document).ready(function () {
+   $(".getnew").click(function () {
+    var imgparam =  $(this).attr('value');
+    var keynum = $(this).parent().attr('value');
+   
+      $.post("/bookget",
+         {
+            value: imgparam,
+            value2: keynum
+         },
+         function (data, status) {
+          var newone = "/public/book/" + data.data + "";
+            $(".b1").attr("src", newone);
+
+            $(".getnew").eq(data.data2).css({"color": "red", "border": "2px solid lightblue"})
+
+
+         });
+   });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-expand-lg justify-content-between" style="background-color:#0097a7 ">
+  
+    <a class="navbar-brand d-lg-block d-md-block d-sm-none d-xs-none" href="#">Народная Медицина Узбекистана</a>
+
+     <ul class="form-inline d-lg-block d-md-block d-sm-none d-xs-none my-2 my-lg-0" >
+      {{#if isHome}}
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Главный<span class="sr-only">(current)</span></a>
+          </li>
+       {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/">Главный<span class="sr-only">(current)</span></a>
+          </li>
+       {{/if}}
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/kitob">Читать Книгу</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/login">Войти в Кабинет</a>
+      </li>
+      
+      
+    </ul>
+
+</nav>

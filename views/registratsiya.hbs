@@ -1,0 +1,50 @@
+    {{#if registratsiyaError}}
+        <p>{{registratsiyaError}}</p>
+    {{/if}}
+ <main>
+    <center>
+      <form action="/registratsiya" method="post">
+     <div class="container">
+        <div  class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 70px; solid #EEE;">
+        <div class="section"></div>
+        
+<div class="section"></div>
+    
+      <div class="section"><i class="mdi-alert-error red-text"></i></div>
+            <div class='row'>
+                <div class='input-field col s12'>
+                  <input class='validate' type="text" name='email'  required />
+                  <label for='email'>Email</label>
+                </div>
+              </div>
+                <div class='row'>
+                <div class='input-field col s12'>
+                  <input class='validate' type="text" name='username' required />
+                  <label for='text'>Name</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-field col m12'>
+                  <input class='validate' type='password' name='password'  required />
+                  <label for='password'>Password</label>
+                </div>
+                <label style='float: right;'>
+                <a><b style="color: #F5F5F5;">Forgot Password?</b></a>
+                </label>
+              </div>
+              <br>    
+              <br/>
+              <center>
+                <div class='col text-center'>
+                  <button style="margin-left:65px;"  type='submit'  class='col  s6 btn btn-small lighten-2 white-text  waves-effect z-depth-1 y-depth-1'>Регистрация</button>
+                </div>
+              </center>
+          <br>
+          <br>
+          <br>
+          </div>
+        </div>
+        </form>
+        </center>
+      </main>
+
