@@ -58,11 +58,12 @@ app.use(express.json());
 app.use(flash());
 
 
+var mon = "mongodb+srv://Shoxruz:puC2V85xanC3F5k1@cluster0.sonbgod.mongodb.net/?retryWrites=true&w=majority";
 
 const startApp = () => {
 try{
   mongoose.set('strictQuery', false);  
-  mongoose.connect(process.env.MONGO_URI, 
+  mongoose.connect(mon, 
     {useNewUrlParser: true},
     () =>
     console.log("Connected to MongoDB")
